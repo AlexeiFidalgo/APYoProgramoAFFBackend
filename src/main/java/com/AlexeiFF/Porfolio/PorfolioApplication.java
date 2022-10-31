@@ -17,7 +17,8 @@ public class PorfolioApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("https://apyoprogramoafffrontend.web.app").allowedMethods("*");
+				registry.addMapping("/**").allowedOrigins("**").allowedMethods("*");
+                                //https://apyoprogramoafffrontend.web.app
 			}
 		};
 	}
