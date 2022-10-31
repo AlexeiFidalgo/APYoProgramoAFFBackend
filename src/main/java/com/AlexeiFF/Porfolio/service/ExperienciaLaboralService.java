@@ -35,9 +35,6 @@ private ExperienciaLaboralRepository experienciaLaboralRepository;
         return  experienciaLaboralRepository.findById(id).orElse(null);
     }
 
-    @Override
-    public List<ExperienciaLaboral> buscarExperienciaLaboralPorUsuario(Usuario usuario) {
-        return  experienciaLaboralRepository.findByUsuarioLike(usuario);
-    }
+   
     
 }

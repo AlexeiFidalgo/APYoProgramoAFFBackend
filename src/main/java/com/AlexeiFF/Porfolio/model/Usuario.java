@@ -14,14 +14,14 @@ import lombok.Setter;
 public class Usuario {
   @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idUsuario;
+    private Long id;
     private String email;
     private String password;
     private String username;
     
   
     public Usuario(Long idUsuario, String email, String password, String username) {
-        this.idUsuario = idUsuario;
+        this.id = id;
         this.email = email;
         this.password = password;
         this.username = username;

@@ -34,9 +34,6 @@ private PersonaRepository personaRepository;
         return  personaRepository.findById(id).orElse(null);
         }
 
-    @Override
-    public List<Persona> buscarPersonaPorUsuario(Usuario usuario) {
-     return   personaRepository.findByUsuarioLike(usuario);
-    }
+
     
 }

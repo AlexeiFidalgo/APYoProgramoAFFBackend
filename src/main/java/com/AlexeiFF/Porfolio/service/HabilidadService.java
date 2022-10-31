@@ -34,8 +34,5 @@ private HabilidadRepository habilidadRepository;
         return  habilidadRepository.findById(id).orElse(null);
     }
 
-    @Override
-    public List<Habilidad> buscarHabilidadPorUsuario(Usuario usuario) {
-      return  habilidadRepository.findByUsuarioLike(usuario);
-    }
+   
 }

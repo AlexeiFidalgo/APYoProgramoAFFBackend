@@ -3,13 +3,13 @@
 
 package com.AlexeiFF.Porfolio.model;
 
-import java.util.Date;
+//import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,32 +18,36 @@ import lombok.Setter;
 public class ExperienciaLaboral {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idExperienciaLaboral;
+    private Long id;
     private String nombre; 
-    private String titulo;
+    private String puesto;
     private String logo;
     private String descripcion;
-    private Date fechaInicio;
-    private Date fechaFin;
-
-    @ManyToOne
-    @JoinColumn(name="id_usuario")
-    private Usuario usuario;
+    private Integer anoInicio;
+    private Integer anoFin;
+    private String tipoEmpleo;
+    //@ManyToOne
+    //@JoinColumn(name="id_usuario")
+   // private Usuario usuario;
     
-    @ManyToOne
-    @JoinColumn(name="id_tipo_empleo")
-    private TipoEmpleo tipoEmpleo;
+    //@ManyToOne
+    //@JoinColumn(name="id_tipo_empleo")
+    //private TipoEmpleo tipoEmpleo;
 
-    public ExperienciaLaboral(Long idExperienciaLaboral, String nombre, String titulo, String logo, String descripcion, Date fechaInicio, Date fechaFin, Usuario usuario, TipoEmpleo tipoEmpleo) {
-        this.idExperienciaLaboral = idExperienciaLaboral;
+    public ExperienciaLaboral(Long id, String nombre, String puesto, 
+            String logo, String descripcion, Integer anoInicio, Integer anoFin, String tipoEmpleo
+            //,Usuario usuario,TipoEmpleo tipoEmpleo
+        ) {
+        this.id = id;
         this.nombre = nombre;
-        this.titulo = titulo;
+        this.puesto = puesto;
         this.logo = logo;
         this.descripcion = descripcion;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-        this.usuario = usuario;
-        this.tipoEmpleo = tipoEmpleo;
+        this.anoInicio = anoInicio;
+        this.anoFin = anoFin;
+        this.tipoEmpleo=tipoEmpleo;
+        //this.usuario = usuario;
+        //this.tipoEmpleo = tipoEmpleo;
     }
 
     public ExperienciaLaboral() {

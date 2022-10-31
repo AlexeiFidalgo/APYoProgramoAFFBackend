@@ -34,10 +34,7 @@ private EducacionRepository educacionRepository;
         return  educacionRepository.findById(id).orElse(null);
         }
 
-    @Override
-    public List<Educacion> buscarEducacionPorUsuario(Usuario usuario) {
-        return  educacionRepository.findByUsuarioLike(usuario);
-    }
+  
 
     
 }

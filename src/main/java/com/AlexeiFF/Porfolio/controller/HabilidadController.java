@@ -28,6 +28,7 @@ public void crearHabilidad(@RequestBody Habilidad habilidad) {
        }
 @PostMapping("/modificar/{id}")
 public void modificarHabilidad(@PathVariable Long id,@RequestBody Habilidad habilidad ) {
+       habilidad.setId(id);
        habilidadService.crearHabilidad(habilidad);
        }
  

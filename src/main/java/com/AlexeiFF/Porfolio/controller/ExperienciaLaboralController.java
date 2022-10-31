@@ -31,8 +31,9 @@ public class ExperienciaLaboralController {
         experienciaLaboralService.crearExperienciaLaboral(experienciaLaboral);
     }
 
-    @PostMapping("/modificar/{id}")
+    @PostMapping ("/modificar/{id}")
     public void modificarExperienciaLaboral(@PathVariable Long id, @RequestBody ExperienciaLaboral experienciaLaboral) {
+       experienciaLaboral.setId(id);
         experienciaLaboralService.crearExperienciaLaboral(experienciaLaboral);
     }
 
@@ -52,10 +53,6 @@ public class ExperienciaLaboralController {
         return experienciaLaboralService.buscarExperienciaLaboral(id);
     }
 
-    @GetMapping("/verPorIdUsuario/{id}")
-    public List buscarExperienciaLaboralPorUsuario(@PathVariable Long id) {
-        Usuario user = usuarioService.buscarUsuario(id);
-        return experienciaLaboralService.buscarExperienciaLaboralPorUsuario(user);
-    }
+  
 
 }

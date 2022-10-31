@@ -34,8 +34,5 @@ private ProyectoRepository proyectoRepository;
         return  proyectoRepository.findById(id).orElse(null);
     }
 
-    @Override
-    public List<Proyecto> buscarProyectoPorUsuario(Usuario usuario) {
-       return proyectoRepository.findByUsuarioLike(usuario);
-    }
+  
 }

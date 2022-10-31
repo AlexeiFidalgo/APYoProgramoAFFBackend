@@ -33,6 +33,7 @@ public void crearPersona(@RequestBody Persona persona) {
        }
 @PostMapping("/modificar/{id}")
 public void modificarPersona(@PathVariable Long id,@RequestBody Persona persona ) {
+        persona.setId(id);
        personaService.crearPersona(persona);
        }
  
@@ -51,10 +52,6 @@ public void borrarHabilidad(@PathVariable Long id) {
 public Persona buscarPersona(@PathVariable Long id) {
        return  personaService.buscarPersona(id);
         }   
-    @GetMapping("/verPorIdUsuario/{id}")
-public  List buscarPersonaPorUsuario(@PathVariable Long id) {
-    Usuario user = usuarioService.buscarUsuario(id);
-       return  personaService.buscarPersonaPorUsuario(user);
-        }  
+  
     
     }

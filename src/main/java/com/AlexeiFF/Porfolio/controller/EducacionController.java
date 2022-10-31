@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,9 +27,9 @@ private IEducacionService educacionService;
 public void crearEducacion(@RequestBody Educacion educacion) {
        educacionService.crearEducacion(educacion);
        }
-@PostMapping("/modificar/{id}")
+@PutMapping("/modificar/{id}")
 public void modificarEducacion(@PathVariable Long id,@RequestBody Educacion educacion) {
-    educacion.setIdEducacion(id);
+    educacion.setId(id);
     educacionService.crearEducacion(educacion);
        }
  

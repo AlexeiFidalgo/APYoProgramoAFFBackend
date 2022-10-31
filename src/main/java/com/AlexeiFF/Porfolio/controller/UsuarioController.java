@@ -88,7 +88,7 @@ public List<Usuario> buscarUsuario(@PathVariable String username) {
         }
 
 
-@PostMapping("/iniciarSesion")
+@PostMapping("/login")
 public ResponseEntity<?> iniciarSesion(@RequestBody Usuario usuarioForm){
     List<Usuario> usuarios=usuarioService.buscarUsuarioPorUsername(usuarioForm.getUsername());
      if(usuarios.get(0).getPassword().equals(usuarioForm.getPassword()) ){
