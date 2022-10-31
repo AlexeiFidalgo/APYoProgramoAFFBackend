@@ -26,6 +26,11 @@ private IEducacionService educacionService;
 public void crearEducacion(@RequestBody Educacion educacion) {
        educacionService.crearEducacion(educacion);
        }
+@PostMapping("/modificar/{id}")
+public void modificarEducacion(@PathVariable Long id,@RequestBody Educacion educacion) {
+    educacion.setIdEducacion(id);
+    educacionService.crearEducacion(educacion);
+       }
  
 @GetMapping("/verTodo")
 @ResponseBody

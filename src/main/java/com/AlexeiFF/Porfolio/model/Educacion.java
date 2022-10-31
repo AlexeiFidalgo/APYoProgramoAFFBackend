@@ -34,11 +34,18 @@ public class Educacion {
     @JoinColumn(name="id_tipo_educacion")
     private TipoEducacion tipoEducacion;
 
-    public Educacion(Long idEducacion, String titulo, String nombreInstitucion) {
+    public Educacion(Long idEducacion, String titulo, String nombreInstitucion, String logo, Date fechaInicio, Date fechaFin, Usuario usuario, TipoEducacion tipoEducacion) {
         this.idEducacion = idEducacion;
         this.titulo = titulo;
         this.nombreInstitucion = nombreInstitucion;
+        this.logo = logo;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.usuario = usuario;
+        this.tipoEducacion = tipoEducacion;
     }
+
+
 
     public Educacion() {
     }

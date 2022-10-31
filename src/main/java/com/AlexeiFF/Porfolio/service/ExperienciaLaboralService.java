@@ -2,6 +2,7 @@
 package com.AlexeiFF.Porfolio.service;
 
 import com.AlexeiFF.Porfolio.model.ExperienciaLaboral;
+import com.AlexeiFF.Porfolio.model.Usuario;
 import com.AlexeiFF.Porfolio.repository.ExperienciaLaboralRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,11 @@ private ExperienciaLaboralRepository experienciaLaboralRepository;
     @Override
     public ExperienciaLaboral buscarExperienciaLaboral(Long id) {
         return  experienciaLaboralRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<ExperienciaLaboral> buscarExperienciaLaboralPorUsuario(Usuario usuario) {
+        return  experienciaLaboralRepository.findByUsuarioLike(usuario);
     }
     
 }

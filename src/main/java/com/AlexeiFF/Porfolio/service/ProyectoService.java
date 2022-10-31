@@ -2,6 +2,7 @@
 package com.AlexeiFF.Porfolio.service;
 
 import com.AlexeiFF.Porfolio.model.Proyecto;
+import com.AlexeiFF.Porfolio.model.Usuario;
 import com.AlexeiFF.Porfolio.repository.ProyectoRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +32,10 @@ private ProyectoRepository proyectoRepository;
     @Override
     public Proyecto buscarProyecto(Long id) {
         return  proyectoRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Proyecto> buscarProyectoPorUsuario(Usuario usuario) {
+       return proyectoRepository.findByUsuarioLike(usuario);
     }
 }

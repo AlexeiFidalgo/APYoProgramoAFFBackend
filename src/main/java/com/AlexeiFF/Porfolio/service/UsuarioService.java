@@ -4,6 +4,7 @@ package com.AlexeiFF.Porfolio.service;
 import com.AlexeiFF.Porfolio.model.Usuario;
 import com.AlexeiFF.Porfolio.repository.UsuarioRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +32,15 @@ private UsuarioRepository usuarioRepository;
     @Override
     public Usuario buscarUsuario(Long id) {
         return  usuarioRepository.findById(id).orElse(null);
-    }    
+        
+    }
+
+    @Override
+    public List<Usuario> buscarUsuarioPorUsername(String username) {
+       return usuarioRepository.findByUsername(username);
+    }
+
+   
+    
+    
 }

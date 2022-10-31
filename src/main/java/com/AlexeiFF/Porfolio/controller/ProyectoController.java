@@ -26,7 +26,10 @@ private IProyectoService proyectoService;
 public void crearProyecto(@RequestBody Proyecto proyecto) {
        proyectoService.crearProyecto(proyecto);
        }
- 
+ @PostMapping("/modificar/{id}")
+public void modificarProyecto(@PathVariable Long id,@RequestBody Proyecto proyecto ) {
+       proyectoService.crearProyecto(proyecto);
+       }
 @GetMapping("/verTodo")
 @ResponseBody
 public List<Proyecto> verProyecto() {

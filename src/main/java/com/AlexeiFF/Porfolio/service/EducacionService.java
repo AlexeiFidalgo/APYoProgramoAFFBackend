@@ -2,6 +2,7 @@
 package com.AlexeiFF.Porfolio.service;
 
 import com.AlexeiFF.Porfolio.model.Educacion;
+import com.AlexeiFF.Porfolio.model.Usuario;
 import com.AlexeiFF.Porfolio.repository.EducacionRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,11 @@ private EducacionRepository educacionRepository;
     public Educacion buscarEducacion(Long id) {
         return  educacionRepository.findById(id).orElse(null);
         }
+
+    @Override
+    public List<Educacion> buscarEducacionPorUsuario(Usuario usuario) {
+        return  educacionRepository.findByUsuarioLike(usuario);
+    }
 
     
 }

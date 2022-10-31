@@ -26,6 +26,10 @@ private IHabilidadService habilidadService;
 public void crearHabilidad(@RequestBody Habilidad habilidad) {
        habilidadService.crearHabilidad(habilidad);
        }
+@PostMapping("/modificar/{id}")
+public void modificarHabilidad(@PathVariable Long id,@RequestBody Habilidad habilidad ) {
+       habilidadService.crearHabilidad(habilidad);
+       }
  
 @GetMapping("/verTodo")
 @ResponseBody

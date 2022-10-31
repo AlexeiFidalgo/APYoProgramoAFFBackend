@@ -41,5 +41,5 @@ public void borrarTipoHabilidad(@PathVariable Long id) {
 @GetMapping("/verPorId/{id}")
 public TipoHabilidad buscarTipoHabilidad(@PathVariable Long id) {
        return  tipoHabilidadService.buscarTipoHabilidad(id);
-        }    
+        } 
 }
