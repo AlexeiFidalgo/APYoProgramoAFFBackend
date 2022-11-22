@@ -29,6 +29,7 @@ public void crearEducacion(@RequestBody Educacion educacion) {
        }
 @PutMapping("/modificar/{id}")
 public void modificarEducacion(@PathVariable Long id,@RequestBody Educacion educacion) {
+    
     educacion.setId(id);
     educacionService.crearEducacion(educacion);
        }
